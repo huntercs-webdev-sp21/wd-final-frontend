@@ -4,14 +4,11 @@ import { Box, Button } from "@material-ui/core";
 import { PageContainer } from "../containers";
 
 const AllCampusesView = (props) => {
-  if (!props.allCampuses.length) {
-    return <div>There are no campuses.</div>;
-  }
-
   return (
     <PageContainer>
-      <Box display="flex">
-        {props.allCampuses.map((campus) => (
+      <Box display="flex" justifyContent="center">
+        {props.allCampuses.length === 0 ? <Box p={2}>There are no campuses registered</Box> :
+        props.allCampuses.map((campus) => (
           <Box key={campus.id} m={1} p={1} border="1px solid black">
             <img width={200} src={campus.image} />
             <Box display="flex" flexDirection="column">
