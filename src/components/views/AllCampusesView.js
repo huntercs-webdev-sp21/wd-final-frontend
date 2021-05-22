@@ -18,10 +18,10 @@ const AllCampusesView = (props) => {
               <span>{campus.description}</span>
               <span>{campus.students.length} students</span>
               <Box display="flex" justifyContent="space-between" m={1}>
-                <Link to={`/edit/campuses/${campus.id}`}>
+                <Link to={`/edit/campus/${campus.id}`}>
                   <Button variant="contained" color="primary">Edit</Button>
                 </Link>
-                <Link to={`/delete/campuses/${campus.id}`}>
+                <Link to={`/delete/campus/${campus.id}`}>
                   <Button variant="contained" color="secondary">Delete</Button>
                 </Link>
               </Box>
