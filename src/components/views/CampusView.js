@@ -11,7 +11,7 @@ const CampusView = ({campus}) => {
           <>
             <Grid container spacing={2}>
               <Grid item xs={6}>
-                <img src={campus.image} style={{"maxWidth":"100%"}} />
+                <img alt="Campus" src={campus.image} style={{"maxWidth":"100%"}} />
                 <p>{campus.address}</p>
               </Grid>
               <Grid item xs={6}>

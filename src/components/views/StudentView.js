@@ -18,7 +18,6 @@ const StudentView = ({student, allCampuses}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('submit', selectedCampus);
     axios.put(`/api/students/${student.id}`, {
       campusId: selectedCampus
     })
@@ -66,7 +65,7 @@ const StudentView = ({student, allCampuses}) => {
           <>
             <Grid container spacing={2}>
               <Grid item xs={6}>
-                <img src={student.image} style={{"maxWidth":"100%"}} />
+                <img alt="Student" src={student.image} style={{"maxWidth":"100%"}} />
               </Grid>
               <Grid item xs={6}>
                 <h1>{student.firstName} {student.lastName}</h1>

@@ -12,7 +12,7 @@ class DeleteStudentContainer extends Component {
     axios.delete(`/api/students/${this.props.match.params.id}`)
       .then(() => this.setState({redirect:true}));
     return (
-      this.state.redirect ? <Redirect to="/campuses" /> : <div />
+      this.state.redirect ? <Redirect to="/students" /> : <div />
     );
   }
 };

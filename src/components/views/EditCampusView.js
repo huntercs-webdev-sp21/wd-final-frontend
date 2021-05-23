@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Box, Button, Grid, TextField, MenuItem, Select  } from "@material-ui/core";
-import { Link } from "react-router-dom";
 import { PageContainer } from "../containers";
 import StudentRow from './StudentRow.js';
 import { useHistory } from 'react-router-dom';
@@ -8,7 +7,6 @@ import axios from "axios";
 
 const EditCampusView = ({campus, allStudents}) => {
   let history = useHistory();
-  const [error, setError] = useState(null);
   const [name, setName] = useState(campus.name);
   const [address, setAddress] = useState(campus.address);
   const [image, setImage] = useState(campus.image);
@@ -52,7 +50,6 @@ const EditCampusView = ({campus, allStudents}) => {
 
   const handleAddStudentSubmit = (e) => {
     e.preventDefault();
-    console.log('submit', selectedStudent);
     axios.put(`/api/students/${selectedStudent}`, {
       campusId: campus.id
     })
@@ -115,7 +112,6 @@ const EditCampusView = ({campus, allStudents}) => {
                 onChange={updateDescription}
                 />
               <br/> <br/>
-              {error && <h2> {error} </h2> }
               <Button type="submit" variant="contained" color="primary">
               Save Changes
               </Button>
@@ -123,7 +119,6 @@ const EditCampusView = ({campus, allStudents}) => {
           </Grid>
         </Grid>
         <form onSubmit={handleAddStudentSubmit}>
-          {console.log(allStudents)}
           <Select fullWidth onChange={handleStudentSelect}>
             <MenuItem label=" "></MenuItem>
             { allStudents && allStudents.map((student, i) => <MenuItem key={i} value={student.id}>{`${student.firstName} ${student.lastName}`}</MenuItem>) }

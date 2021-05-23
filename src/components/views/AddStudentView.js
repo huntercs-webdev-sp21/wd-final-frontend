@@ -45,7 +45,6 @@ const AddStudentView = ({allCampuses}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isNaN(gpa) || gpa < 0 || gpa > 4) {
-      console.log(gpa);
       setError("GPA must be between 0 and 4");
     } else {
       setError(null);

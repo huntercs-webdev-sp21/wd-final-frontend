@@ -1,8 +1,6 @@
 import { useState } from "react";
-import { Box, Button, Grid, TextField, MenuItem, Select  } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import { Box, Button, Grid, TextField } from "@material-ui/core";
 import { PageContainer } from "../containers";
-import StudentRow from './StudentRow.js';
 import { useHistory } from 'react-router-dom';
 import axios from "axios";
 

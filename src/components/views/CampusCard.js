@@ -8,7 +8,7 @@ const CampusCard = ({campus}) => {
   }
   return (
     <Box key={campus.id} m={1} p={1} border="1px solid black">
-      <img width={200} src={campus.image} />
+      <img alt="Student" width={200} src={campus.image} />
       <Box display="flex" flexDirection="column">
         <Link to={`/campus/${campus.id}`}>
           <h3>{campus.name}</h3>

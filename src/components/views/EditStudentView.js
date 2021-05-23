@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Box, Button, Grid, MenuItem, Select, TextField } from "@material-ui/core";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import { PageContainer } from "../containers";
 import { useHistory } from 'react-router-dom';
@@ -47,7 +46,6 @@ const EditStudentView = ({student, allCampuses}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isNaN(gpa) || gpa < 0 || gpa > 4) {
-      console.log(gpa);
       setError("GPA must be between 0 and 4");
     } else {
       setError(null);
@@ -67,7 +65,6 @@ const EditStudentView = ({student, allCampuses}) => {
 
   const handleChangeCampusSubmit = (e) => {
     e.preventDefault();
-    console.log('submit', selectedCampus);
     axios.put(`/api/students/${student.id}`, {
       campusId: selectedCampus
     })
