@@ -9,3 +9,4 @@ export { default as DeleteCampusContainer } from "./DeleteCampusContainer";
 export { default as DeleteStudentContainer } from "./DeleteStudentContainer";
 export { default as EditCampusContainer } from "./EditCampusContainer";
 export { default as EditStudentContainer } from "./EditStudentContainer";
+export { default as AddStudentContainer } from "./AddStudentContainer";
