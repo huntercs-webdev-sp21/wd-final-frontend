@@ -6,6 +6,12 @@ import { PageContainer } from "../containers";
 const AllCampusesView = (props) => {
   return (
     <PageContainer>
+      <Box display="flex" alignItems="center" flexDirection="column">
+        <h1>Campuses</h1>
+        <Link to="/new/campus">
+          <Button variant="contained" color="primary">Add Campus</Button>
+        </Link>
+      </Box>
       <Box display="flex" justifyContent="center">
         {props.allCampuses.length === 0 ? <Box p={2}>There are no campuses registered</Box> :
         props.allCampuses.map((campus) => (
