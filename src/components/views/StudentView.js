@@ -34,7 +34,7 @@ const StudentView = ({student, allCampuses}) => {
           <CampusCard campus={allCampuses.find(c => c.id === student.campus.id)} />
           <div>
             <form onSubmit={handleSubmit}>
-              <Select onChange={handleChange} placeholder="Select a campus">
+              <Select fullWidth onChange={handleChange} placeholder="Select a campus">
                 <MenuItem label=" "></MenuItem>
                 { allCampuses && allCampuses.map((campus, i) => <MenuItem key={i} value={campus.id}>{campus.name}</MenuItem>) }
               </Select> <br />
@@ -60,7 +60,7 @@ const StudentView = ({student, allCampuses}) => {
   }
 
   return (
-    <PageContainer>      
+    <PageContainer>
       <Box display="flex" alignItems="center" flexDirection="column" width={1000} margin="auto" pt={4}>
         {student === undefined ? <Box m={2}>Loading...</Box> : (
           <>

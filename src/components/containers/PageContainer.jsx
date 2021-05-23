@@ -9,13 +9,16 @@ import { Link } from 'react-router-dom';
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
+    "& .MuiSelect-select": {
+      background: "white",
+    },
   },
   title: {
     flexGrow: 1,
     textAlign: 'left',
     fontType: 'bold',
-    fontFamily: 'Courier, sans-serif', 
-    fontSize: '35px', 
+    fontFamily: 'Courier, sans-serif',
+    fontSize: '35px',
     color: '#CDDC39'
   },
   appBar:{
@@ -24,7 +27,7 @@ const useStyles = makeStyles(theme => ({
   },
   links:{
     textDecoration: 'none',
-  }
+  },
 }));
 
 const PageContainer = ({children}) => {
