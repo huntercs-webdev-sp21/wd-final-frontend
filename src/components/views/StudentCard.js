@@ -24,7 +24,6 @@ const StudentCard = ({student, showCampus}) => {
 
 StudentCard.propTypes = {
   student: PropTypes.object.isRequired,
-  showCampus: PropTypes.bool.isRequired,
 };
 
 export default StudentCard;

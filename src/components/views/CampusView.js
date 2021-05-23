@@ -25,7 +25,11 @@ const CampusView = ({campus}) => {
                 </Link>
               </Grid>
             </Grid>
-            {campus.students.length === 0 ? <></> : (
+            <h1>Students on campus</h1>
+            <Link to={`/edit/campus/${campus.id}`}>
+              <Button variant="contained" color="primary">Add Students</Button>
+            </Link>
+            {campus.students.length === 0 ? <Box p={2}>No students to show</Box> : (
               campus.students.map(student => <StudentCard key={student.id} student={student} />)
             )}
             </>
