@@ -83,7 +83,7 @@ const EditCampusView = ({campus, allStudents}) => {
                     fullWidth
                     defaultValue={campus.name}
                     onChange={updateName}
-                  />
+                    />
                   <br/> <br/>
                   <TextField
                     type="text"
@@ -94,7 +94,7 @@ const EditCampusView = ({campus, allStudents}) => {
                     fullWidth
                     defaultValue={campus.address}
                     onChange={updateAddress}
-                  />
+                    />
                   <br/> <br/>
                   <TextField
                     type="text"
@@ -104,7 +104,7 @@ const EditCampusView = ({campus, allStudents}) => {
                     fullWidth
                     defaultValue={campus.image}
                     onChange={updateImage}
-                  />
+                    />
                   <br/> <br/>
                   <TextField
                     multiline={true}
@@ -117,28 +117,30 @@ const EditCampusView = ({campus, allStudents}) => {
                     required
                     defaultValue={campus.description}
                     onChange={updateDescription}
-                  />
+                    />
                   <br/> <br/>
                   {error && <h2> {error} </h2> }
                   <Button type="submit" variant="contained" color="primary">
-                    Save Changes
+                  Save Changes
                   </Button>
                 </form>
               </Grid>
             </Grid>
             <form onSubmit={handleAddStudentSubmit}>
               {console.log(allStudents)}
-          <Select fullWidth onChange={handleStudentSelect}>
-            <MenuItem label=" "></MenuItem>
-            { allStudents && allStudents.map((student, i) => <MenuItem key={i} value={student.id}>{`${student.firstName} ${student.lastName}`}</MenuItem>) }
-          </Select> <br />
+              <Select fullWidth onChange={handleStudentSelect}>
+                <MenuItem label=" "></MenuItem>
+                { allStudents && allStudents.map((student, i) => <MenuItem key={i} value={student.id}>{`${student.firstName} ${student.lastName}`}</MenuItem>) }
+              </Select> <br />
               <Button type="submit" variant="contained" color="primary">Add Student</Button>
-        </form>
+            </form>
             <h1>Students on campus</h1>
-            {campus.students.length === 0 ? <Box p={2}>No students to show</Box> : (
-              campus.students.map(student => <StudentRow key={student.id} student={student} />)
-            )}
-          </>
+            <Box display="flex" flexWrap="wrap">
+              {campus.students.length === 0 ? <Box p={2}>No students to show</Box> : (
+                campus.students.map(student => <StudentRow key={student.id} student={student} />)
+              )}
+            </Box>
+            </>
         )}
       </Box>
     </PageContainer>

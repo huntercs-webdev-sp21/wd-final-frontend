@@ -13,7 +13,7 @@ const AllStudentsView = (props) => {
           <Button variant="contained" color="primary">Add Student</Button>
         </Link>
       </Box>
-      <Box display="flex" justifyContent="center">
+      <Box display="flex" flexWrap="wrap" justifyContent="center">
         {props.allStudents.length === 0 ? <Box m={2}>There are no students registered</Box> :
         props.allStudents.map((student) => <StudentCard student={student} showCampus />)}
       </Box>

@@ -13,7 +13,7 @@ const AllCampusesView = (props) => {
           <Button variant="contained" color="primary">Add Campus</Button>
         </Link>
       </Box>
-      <Box display="flex" justifyContent="center">
+      <Box display="flex" flexWrap="wrap" justifyContent="center">
         {props.allCampuses.length === 0 ? <Box p={2}>There are no campuses registered</Box> :
         props.allCampuses.map((campus) => (
           <CampusCard key={campus.id} campus={campus} />
