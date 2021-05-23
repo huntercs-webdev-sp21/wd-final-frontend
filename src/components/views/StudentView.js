@@ -49,7 +49,7 @@ const StudentView = ({student, allCampuses}) => {
       <div>
         <h3>This student is not registered to a campus</h3>
         <form onSubmit={handleSubmit}>
-          <Select onChange={handleChange}>
+          <Select fullWidth onChange={handleChange}>
             <MenuItem label=" "></MenuItem>
             { allCampuses && allCampuses.map((campus, i) => <MenuItem key={i} value={campus.id}>{campus.name}</MenuItem>) }
           </Select> <br />

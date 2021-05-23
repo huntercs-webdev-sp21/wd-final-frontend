@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { Box, Button } from "@material-ui/core";
 
 const CampusCard = ({campus}) => {
+  if(!campus){
+    return "No campus";
+  }
   return (
     <Box key={campus.id} m={1} p={1} border="1px solid black">
       <img width={200} src={campus.image} />

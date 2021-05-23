@@ -8,3 +8,4 @@ export { default as PageContainer } from "./PageContainer";
 export { default as DeleteCampusContainer } from "./DeleteCampusContainer";
 export { default as DeleteStudentContainer } from "./DeleteStudentContainer";
 export { default as EditCampusContainer } from "./EditCampusContainer";
+export { default as EditStudentContainer } from "./EditStudentContainer";

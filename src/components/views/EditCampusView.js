@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Box, Button, Grid, TextField, MenuItem, Select  } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { PageContainer } from "../containers";
-import StudentCard from './StudentCard.js';
+import StudentRow from './StudentRow.js';
 import { useHistory } from 'react-router-dom';
 import axios from "axios";
 
@@ -60,7 +60,6 @@ const EditCampusView = ({campus, allStudents}) => {
   };
 
   if (!campus || !allStudents) {
-    console.log(allStudents)
     return <div>Loading...</div>;
   }
 
@@ -137,7 +136,7 @@ const EditCampusView = ({campus, allStudents}) => {
         </form>
             <h1>Students on campus</h1>
             {campus.students.length === 0 ? <Box p={2}>No students to show</Box> : (
-              campus.students.map(student => <StudentCard key={student.id} student={student} />)
+              campus.students.map(student => <StudentRow key={student.id} student={student} />)
             )}
           </>
         )}
