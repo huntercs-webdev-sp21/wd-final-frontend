@@ -8,7 +8,8 @@ import {
   CampusContainer,
   StudentContainer,
   AllCampusesContainer,
-  AllStudentsContainer
+  AllStudentsContainer,
+  DeleteCampusContainer
 } from './components/containers';
 
 // if you create separate components for adding/editing 
@@ -24,7 +25,8 @@ const App = () => {
         <Route exact path="/campus/:id" component={CampusContainer} />
         <Route exact path="/students" component={AllStudentsContainer} />
         <Route exact path="/student/:id" component={StudentContainer} />
-      </Switch>        
+        <Route path="/delete/campus/:id" component={DeleteCampusContainer} />
+      </Switch>
     </div>
   );
 }
